@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cardlab</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../estilo/main.css">
+    <link rel="stylesheet" href="../estilo/mainResponsive.css">
+    <script defer src="../../controllers/setup.js"></script>
+    <script defer src="../../controllers/mostrarCarteiraController.js"></script> 
+</head>
+
+<body>
+
+    <!--Menu lateral-->
+    <div class="sidebar" id="mySidebar">
+        <button class="itemClose" onclick="closeSidebar()" id="itemClose">Close &times;</button>
+
+        <a href="../Agendar/">Agendar Vacina!</a>
+
+        <a href="#">Abrir Cardlab</a>
+
+        <a href="#">Localizações</a>
+
+        <a href="#">Configurações</a>
+    </div>
+
+
+    <header class="container">
+        <button class="itemOpen" onclick="openSidebar()" id="itemOpen">☰</button>
+        <img src="../../img/cardlab-logo-top.png" alt="logo">
+        <div class="menu">
+            <a href="../Home/">Início</a>
+            <a href="#">Notícias</a>
+            <a href="#">Informações</a>
+        </div>
+        <div class="botao">
+            <button id="botaoCadastro">
+                Cadastrar
+            </button>
+            <button id="botaoEntrar" onclick="login()">
+                Entrar
+            </button>
+        </div>
+
+    </header>
+        <main>
+            <div class="tabela">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nr carteira</th>
+                            <th>Vacina</th>
+                            <th>Fabricante</th>
+                            <th>Data agendada</th>
+                            <th>proxima dose</th>
+                            <th>Posto de saúde</th>
+                            <th>Descrição</th>
+                        </tr>
+                    </thead>
+                    <tbody id="body">
+                    </tbody>
+                </table>
+            </div>
+        </main>
+
+   
+
+
+
+
+    
+</body>
+
+</html>

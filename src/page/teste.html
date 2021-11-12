@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+
+
+
+	<title>Cardlab</title>
+</head>
+<body>
+
+	<!-- barra de navegação -->
+
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		  <div class="container-fluid">
+		    <a class="navbar-brand" href="#">Cardlab</a>
+		    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+		      <span class="navbar-toggler-icon"></span>
+		    </button>
+		    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+		      <div class="navbar-nav">
+		        <a class="nav-link active" aria-current="page" href="home.html">Inicio</a>
+		        <a class="nav-link" href="noticias.html">Notícias</a>
+		        <a class="nav-link" href="#">Sobre</a>
+		      </div>
+
+		      	<!-- botoes de login e cadastro -->
+
+				<a class="btn btn-outline-primary" id="cad" data-bs-toggle="offcanvas" role="button" href="#offcanvasexemplo">Perfil</a>
+		      	<a class="btn btn-outline-success" id="entrar"  href="login.html">Entrar</a>
+	
+		    </div>
+		  </div>
+		</nav>
+
+		<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasexemplo" aria-labelledby="offcanvaslab">
+			<div class="offcanvas-header">
+				<h5 class="offcanvas-title" id="offcanvaslab">offcanvas</h5>
+				<button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="close"></button>
+			</div>
+			<div class="offcanvas-body">
+				<div>
+					elementos de menu e notificação !!
+				</div>
+			</div>
+
+
+
+		</div>
+		<!-- carousel -->
+
+				<div id="carouselImg" class="carousel carousel-dark slide" data-bs-ride="carousel">
+				  <div class="carousel-indicators">
+				    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+				    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+				    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+				  </div>
+				  <div class="carousel-inner">
+				    <div class="carousel-item active">
+				      <img src="img/img1.jpg" class="d-block w-100" alt="img1" id="img1">
+				     	
+		    		</div>
+			    <div class="carousel-item">
+			      <img src="img/img2.png" class="d-block w-100" alt="img2" id="img2">
+			      <div class="carousel-caption d-none d-md-block">
+			      	
+			     
+			      	
+			      </div>
+		   		 </div>
+			    <div class="carousel-item">
+			      <img src="img/img3.jpg" class="d-block w-100" alt="img3" id="img3">
+			      <div class="carousel-caption d-none d-md-block">
+			      
+			       	<h3>PESQUISAS AVANÇAM!</h3>
+			       	<p>Os avanços e otimização das vacinas.</p>
+			      </div>
+			    </div>
+		  </div>
+		  <button class="carousel-control-prev" type="button" data-bs-target="#carouselImg" data-bs-slide="prev">
+		    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+		    <span class="visually-hidden">Previous</span>
+		  </button>
+		  <button class="carousel-control-next" type="button" data-bs-target="#carouselImg" data-bs-slide="next">
+		    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+		    <span class="visually-hidden">Next</span>
+		  </button>
+		</div>
+
+
+
+
+
+
+</body>
+
+<style type="text/css">
+		
+#entrar {
+	margin-left:1%;
+}
+
+#cad {
+	margin-left:70% ; 
+}
+
+#img1{
+	height: 550px;
+	width: 400px; 
+}
+
+#img2 {
+	height: 550px;
+	width: 400px;
+}
+
+#img3{
+	height:550px;
+	width: 400px;
+}
+
+
+
+</style>
+
+
+
+</html>

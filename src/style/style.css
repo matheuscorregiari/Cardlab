@@ -1,0 +1,125 @@
+/* Geral */
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	
+	color: #323232;
+	border: none;
+}
+
+body {
+	background-color: #aecbe9;
+}
+
+textarea:focus, input:focus{     /*Tirar borda quando seleciona um itém*/
+	outline: none;
+}
+
+a{
+	 /*Atualiza o tamanho da fonte em aparelhos menores*/
+}
+
+a:hover{
+	color: #08558B; /*Cor dos links*/
+}
+
+/*Container Login*/
+
+#login{
+	background-color: #FFF;
+	width: 400px;
+	margin-left: auto;  /*Centralizar*/
+	margin-right: auto;	/*Centralizar*/
+	padding: 20px 30px; /*Afastar elementos da borda*/
+	margin-top: 20vh;
+	border-radius: 10px;
+	text-align: center;
+}
+
+/*Formulário*/
+
+form{
+	margin-top: 30px;
+	margin-bottom: 40px;
+}
+
+label, input {
+	display: block;
+	width: 100%;
+	text-align: left;
+}
+
+label {
+	font-weight: bold;
+	font-size: .8rem;
+}
+
+input {
+	border-bottom: 2px solid #323232;
+	padding: 10px;
+	font-size: 1rem;
+	margin-bottom: 20px;
+}
+
+input:focus{
+	border-bottom: 2px solid #08558B;
+}
+
+#forgot-pass{
+	text-align: right;
+	display: block;
+}
+
+input[type="submit"]{
+	text-align: center;
+	text-transform: uppercase;
+	font-weight: bold;
+	border: none;
+	height: 40px;
+	border-radius: 20px;
+	margin-top: 30px;
+	color: #FFF;
+	background-color: #aecbe9;
+	cursor: pointer;
+}
+
+input[type="submit"]:hover{
+	background-color: #08558B;
+	transition: .5s; 
+}
+
+#toggle{
+	position: absolute;
+	top: 50px;
+	right: 20px;
+	transform: translateY(-50%);
+	width: 30px;
+	height: 30px;
+	background: url(show.png);
+	background-size: cover;
+	cursor: pointer;
+}
+
+#toglle.hide{
+
+	background: url(hide.png);
+	background-size: cover;
+}
+
+.inputBox input::placeholder{
+	color: #ccc;
+}
+
+span{
+	position: relative;
+}
+
+.bi-eye{
+	position: relative;
+	top: -50px;
+	right: -150px;
+	cursor: pointer;
+	color: black;
+}

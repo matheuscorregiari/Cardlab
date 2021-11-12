@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../estilo/mainResponsive.css">
+    <link rel="stylesheet" href="../estilo/main.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <title>Agendamento</title>
+    <script defer src="../../controllers/setup.js"></script>
+    <script defer src="../../controllers//agendarController.js"></script>
+
+</head>
+
+<body>
+    <!--Menu lateral-->
+    <div class="sidebar" id="mySidebar">
+        <button class="itemClose" onclick="closeSidebar()" id="itemClose">Close &times;</button>
+
+        <a href="../Agendar/">Agendar Vacina!</a>
+
+        <a href="../MostrarCarteira/">Abrir Cardlab</a>
+
+        <a href="#">Localizações</a>
+
+        <a href="#">Configurações</a>
+    </div>
+
+    <!--menu principal-->
+    <header class="container">
+        <button class="itemOpen" onclick="openSidebar()" id="itemOpen">☰</button>
+        <img src="../../img/cardlab-logo-top.png" alt="logo">
+        <div class="menu">
+            <a href="../Home/">Início</a>
+            <a href="#">Notícias</a>
+            <a href="#">Informações</a>
+        </div>
+        <div class="botao">
+            <button id="botaoCadastro">
+                Cadastrar
+            </button>
+            <button id="botaoEntrar">
+                Entrar
+            </button>
+        </div>
+
+    </header>
+
+
+    <main>
+        <form class="agenda" method="POST" onsubmit="FORM.sendingForm(event)">
+            <h2>Agendamento da sua vacina</h2>
+
+            <label for="posto">Selecione o posto:</label>
+            <select id="posto" name="posto">
+                <option value="01">USF LOTY</option>
+                <option value="02">USF SAVOY</option>
+                <option value="03">USF GUAPIRANGA</option>
+                <option value="04">USF CENTRO</option>
+                <option value="05">USF GRANDESP</option>
+                <option value="06">USF SUARAO</option>
+                <option value="07">USF OASIS</option>
+                <option value="08">USF BELAS ARTES</option>
+                <option value="09">USF GAIVOTA</option>
+            </select>
+
+
+            <label for="data">Escolha uma data:</label>
+            <input type="date" id="date">
+
+            <label for="vacina">Escolha sua vacina:</label>
+            <select name="vacina" id="vacina">
+                <option value="01">CORONAVAC</option>
+                <option value="02">ASTRAZENECA</option>
+                <option value="03">PFIZER</option>
+                <option value="04">JANSSEN</option>
+                <option value="05">SPUTNIK</option>
+                <option value="06">COVAXIN</option>
+            </select>
+            <button>Enviar</button>
+        </form>
+
+        
+
+    </main>
+</body>
+
+</html>

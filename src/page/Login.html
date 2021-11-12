@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Cardlab - login</title>
+	
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+	<link rel="stylesheet" href="../style/style.css">
+	<!-- Jquery -->
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+	<script defer src="../controllers/login.js"></script>
+</head>
+<body>
+
+		<nav id="nav" class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom"style="text-align: center;">
+    <a class="navbar-brand" href="index.html">
+      <img id="logo" src="../img/cardlab-logo-top.png" title="CARDLAB" alt="" width="auto" height="50">
+    </a>
+
+    <ul style="padding-right: 5rem" class="nav col-md-auto mb-2 align-items-center justify-content-center mb-2 md-0 text-dark">
+      <li><a href="index.html" class="nav-link px-2 link-dark">INICIO</a></li>
+      <li><a href="noticias.html" class="nav-link px-2 link-dark">NOTÍCIAS</a></li>
+      <li><a href="informacoes.html" class="nav-link px-2 link-dark">INFORMAÇÕES</a></li>
+    </ul>
+  </nav>
+
+
+
+
+	<div id="login" class="container">
+		<h1>Login</h1>
+		<form  onsubmit="Form.autlogin(event)" method="post">
+			<div class="inputBox">
+				<div>
+					<label for="cpf">CPF</label>
+					<input type="text" name="cpf" id="cpf" placeholder="Digite seu CPF">
+				</div>
+				<div>
+					<label for="password">Senha</label>
+					<input type="password" name="senha" id="senha" placeholder="Digite sua senha">
+					<i class="bi bi-eye"></i>
+				</div>
+			</div>
+			<a href="#" id="forgot-pass">Esqueceu a senha?</a>
+			<button type="submit">Entrar</button>
+		</form>
+
+		<p>Ainda não tem conta?</p>
+		<a href="criar_conta.html">Criar conta</a>
+
+	</div>
+	
+</body>
+
+<style type="text/css">
+
+	#forgot-pass{
+		margin-top: 3%;
+	}
+	body{
+    	background-color: #aecbe9;
+    	background-repeat: no-repeat;
+    	background-size: cover;
+    	opacity: o.8;
+  	}
+
+  	#login{
+  		box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  	}
+  	#logo{
+          padding: 0 5rem;
+          padding-right: 2rem;
+
+        }
+    #nav{
+    	background-color: white;
+  	}
+
+</style>
+
+
+
+</html>
