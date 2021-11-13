@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style/main.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script defer src="../../controllers/vaccineController.js"></script>
     <title>Bem vindo adm</title>
 </head>
 <body>
@@ -64,20 +66,57 @@
 
         <h3>Cadastrar nova vacina</h3>
         <div class="cadastrarVacina">
-            <form action="" method="POST">
+            <form action="" method="POST" onsubmit="Form.sendForm(event)">
                
                     <label for="cdvacina">Codigo da vacina (2 digitos):</label>
-                    <input type="number" placeholder="Digite o codigo">
+                    <input type="number" placeholder="Digite o codigo" id="idVaccine">
              
                 
                     <label for="nmvacina">Nome da vacina:</label>
-                    <input type="text" placeholder="digite o nome">
+                    <input type="text" placeholder="digite o nome" id="nameVaccine">
                
               
                     <label for="fbvac">Fabricante:</label>
-                    <input type="text" placeholder="Digite o fabricante">
+                    <input type="text" placeholder="Digite o fabricante" id="manufacturerVaccine">
                
+                    
+                    
+                    <br>
+
+                    <label for="cdmedicamento">Codigo do medicamento</label>
+                    <input type="number" placeholder="digite o codigo" id="idMedicine">
+
+                    <label for="dtfab">Data de fabricação:</label>
+                    <input type="date" id="dateManufacturer">
+
+                    <label for="dtval">Data de validade:</label>
+                    <input type="date" id="dateValidity">
+
+                    <label for="lote">Lote:</label>
+                    <input type="text" placeholder="digite o lote" id="batch">
+
+                    <label for="qntvac">Quantidade:</label>
+                    <input type="number" placeholder="digite a quantidade" id="amountVaccine">
+
+                    <label for="desc">Descrição da vacina</label>
+                    <textarea name="desc" cols="30" rows="10" id="description">Descrição da vac</textarea>
+
+                    <label for="categoria">Faixa etaria:</label>
+                    <select name="categoria" id="category">
+                        <option value="recem-nascido">recem-nascido</option>
+                        <option value="criança">criança</option>
+                        <option value="adolescente">adolescente</option>
+                        <option value="adulto">adulto</option>
+                        <option value="idoso">idoso</option>
+                    </select>
+
+                    <label for="posto">Para qual posto?</label>
+                    <select name="posto" id="posto">
+                        <option value="01">USFLOTY</option>
+                    </select>
+
                     <button class="btnCadastrar">Cadastrar</button>
+
             </form>
         </div>
 
