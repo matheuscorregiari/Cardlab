@@ -31,12 +31,64 @@
     </header>
 
     <main>
+        
+        
+        <h3>Validar na carteira de vacina do paciente</h3>
         <div class="validarPaciente">
             <form action="" method="POST">
                 <label for="cpf">Digite o CPF:</label>
-                <input type="text">
+                <input type="text" placeholder="buscar pelo cpf">
 
-                <button class="btnValidar" type="submit">Validar</button>
+                <button class="btnBuscar" type="submit">Buscar</button>
+            </form>      
+            <table class="tabela"> 
+                <thead>
+                    <tr>
+                        <th>Nr carteira</th>
+                        <th>Vacina</th>
+                        <th>Fabricante</th>
+                        <th>Data agendada</th>
+                        <th>proxima dose</th>
+                        <th>Posto de saúde</th>
+                        <th>Descrição</th>
+                    </tr>
+                </thead>
+                <tbody id="body">
+                </tbody>
+            </table>
+            confirmar vacinação:
+            <input type="checkbox">
+
+            <button class="btnValidar">Validar</button>
+        </div>
+
+        <h3>Cadastrar nova vacina</h3>
+        <div class="cadastrarVacina">
+            <form action="" method="POST">
+               
+                    <label for="cdvacina">Codigo da vacina (2 digitos):</label>
+                    <input type="number" placeholder="Digite o codigo">
+             
+                
+                    <label for="nmvacina">Nome da vacina:</label>
+                    <input type="text" placeholder="digite o nome">
+               
+              
+                    <label for="fbvac">Fabricante:</label>
+                    <input type="text" placeholder="Digite o fabricante">
+               
+                    <button class="btnCadastrar">Cadastrar</button>
+            </form>
+        </div>
+
+        <h3>Editar vacina</h3>
+        <div class="editarVacina">
+            <form action="" method="POST">
+                <label for="cdvac">Cd vacina:</label>
+                <input type="number" placeholder="Buscar pelo cd">
+
+                <label for="qntvac">Alterar quantidade:</label>
+                <input type="number" placeholder="Digite a quantidade">
             </form>
         </div>
     </main>

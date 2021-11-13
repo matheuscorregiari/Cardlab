@@ -73,23 +73,108 @@ header .botao{
     border: 2px solid black;
 }
 
+h3{
+    text-align: center;
+    font-size: 26px;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin-top: 20px;
+}
+
 
 .validarPaciente{
     margin-top: 10px;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     background-color: bisque;
+    align-items: center;
+    padding-left: 30px;
 }
 
-.validarPaciente .btnValidar{
-    width: 50px;
+.validarPaciente .btnBuscar{
     height: 30px;
     background-color: rgb(199, 196, 196);
     color: black;
     border: 1px solid black;
+    padding-left: 3px;
+    padding-right: 3px;
+}
+
+.validarPaciente .btnBuscar:hover{
+    background-color: cornflowerblue;
+    color: white;
+}
+
+.tabela{
+    border: 1px solid black;
+    margin-top: 10px;
+    padding: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+
+}
+
+.tabela th ,td{
+    width: 20%;
+}
+
+.tabela td{
+     text-align: center;
+}
+
+.validarPaciente .btnValidar{
+    min-height: 30px;
+    background-color: rgb(199, 196, 196);
+    color: black;
+    border: 1px solid black;
+    margin-left: 150px;
+    padding-left:3px;
+    padding-right:3px ;
 }
 
 .validarPaciente .btnValidar:hover{
+    background-color: rgb(43, 134, 43);
+    color: white;
+    border: 2px solid black;
+}
+/*Cadastrar vacina*/
+
+.cadastrarVacina{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: cadetblue;
+    margin-top: 5px;
+    padding-left: 30px;
+    
+    height:100px ;
+}
+
+.cadastrarVacina input{
+    margin-right: 10px;
+}
+
+.cadastrarVacina .btnCadastrar{
+    height: 30px;
+    background-color: rgb(199, 196, 196);
+    color: black;
+    border: 1px solid black;
+    padding-right: 3px;
+    padding-left: 3px;
+}
+
+.cadastrarVacina .btnCadastrar:hover{
     background-color: green;
     color: white;
 }
+
+.editarVacina{
+    display: flex;
+    background-color: cadetblue;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-top: 20px;
+    min-height: 80px;
+    align-items: center;
+}
+
