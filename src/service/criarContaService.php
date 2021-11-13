@@ -36,6 +36,19 @@ if($_POST){
 	}
 	else{
 
+		//verificar se o usuário já existe antes de cadastrar
+		$verifySql = 'SELECT * FROM TB_PACIENTE WHERE CPF = '.$cpf.'';
+
+		$verifyUserExist = $con->query($verifySql);
+
+		if($verifyUserExist->num_rows>0){
+			$dados['message'] = "CPF já cadastrado no sistema :/";
+			$dados['success'] =  false;
+			echo json_encode($dados);
+			die;
+		}
+
+		//cadastrar o usuário no sistema
 		$sql = 'INSERT INTO TB_PACIENTE VALUES(';
 		$sql .= 'null,';
 		$sql .= '"'.$email.'",';
@@ -45,8 +58,6 @@ if($_POST){
 		$sql .= '"'.$sexo.'",';
 		$sql .= '"'.$nome.'",';
 		$sql .= '"'.$endereco.'",';
-		
-		
 		$sql .= '"'.$tpsang.'",';
 		$sql .= '"'.$rg.'",';
 		$sql .= '"'.$cpf.'",';
@@ -57,22 +68,33 @@ if($_POST){
 
 		$res = $con->query($sql);
 
-		echo $res;
+		//verificar se o cadastro foi um sucesso se sim então entra no if se não entra no else
 		if($res == 1){
-			$dados['message'] = "Cadastro concluído";
-			$dados['success'] =  true;
-			echo json_encode($dados);
+
+			//pegar as informações do usuário que acabou de se cadastrar para setar os dados na sessão
+			$getUserData="SELECT * FROM tb_paciente WHERE cpf='$cpf'";
+
+			$query = $con->query($getUserData);
+
+			if($query->num_rows>0) {
+				$result = $query->fetch_row();
+				$dados['error']=false;
+				$dados['name'] = $result[6];
+				$dados['id'] = $result[0];
+				$dados['accessLevel'] = false;
+				$dados['cdPosto'] = $result[12];
+				$dados['message'] = "Cadastro concluído";
+				$dados['success'] =  true;
+
+				echo json_encode($dados);
+				die;
+			}	
 		}else{
 			$dados['message'] =  "Erro ao cadastrar, contate um administrador para reportar o erro!!";
 			$dados['success'] =  false;
 			echo json_encode($dados);
 		}
 	}
-
-	
-
-	
-	
 }
 
 ?>

@@ -1,0 +1,95 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+}
+
+header.container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid black;
+    height: 80px;
+    background-color: rgba(239, 244, 252, 0.938);
+    box-shadow: 1px 2px 2px rgb(0, 0, 0, 0.88);
+}
+
+header img{
+    max-width: 200px;
+    max-height: 200px;
+    width: auto;
+    height: auto;
+    justify-content: left;
+    margin-left: 20px;
+}
+
+
+.menu p{
+    text-decoration: none;
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    color: rgba(39, 38, 38, 0.788);
+    justify-content: flex-end;
+    margin-right: 50px;
+    
+}
+
+.menu p:hover{
+    text-decoration: underline;
+    color: black;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.menu{
+    display: flex;
+}
+
+header .botao{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-right: 20px;
+}
+
+.botao #botaoSair{
+    background-color: rgb(0,0 ,0 , 0.4);
+    border: 1px solid black;
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    padding: 5px;
+    font-weight: 600;
+    border-radius: 6%;
+    height: 50px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-right: 10px;
+}
+
+.botao #botaoSair:hover{
+    background-color: rgba(216, 77, 77, 0.904);
+    color: white;
+    border: 2px solid black;
+}
+
+
+.validarPaciente{
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    background-color: bisque;
+}
+
+.validarPaciente .btnValidar{
+    width: 50px;
+    height: 30px;
+    background-color: rgb(199, 196, 196);
+    color: black;
+    border: 1px solid black;
+}
+
+.validarPaciente .btnValidar:hover{
+    background-color: green;
+    color: white;
+}

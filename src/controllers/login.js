@@ -3,7 +3,7 @@ const Form = {
 	cpf: document.getElementById('cpf'),
 	senha: document.getElementById('senha'),
 
-	//retor
+	//método que pega o valor dos input
 	getValues(){
 		return{
 			cpf: this.cpf.value,
@@ -11,6 +11,7 @@ const Form = {
 		}
 	},
 
+	//metodo que valida as informações
 	validation(){
 		let { cpf, senha } = this.getValues();
 
@@ -35,12 +36,15 @@ const Form = {
 		}
 	},
 
+	//método que é chamado quando o formulário é enviado
 	autlogin(event){
 		event.preventDefault();
 	
 		try {
+			//chamando uma sequencia de métodos que vai desde pegar os valores até a realização da validação
 			const { cpf, senha } = this.validation();
 			
+			//enviando os dados para o PHP para fazer a consulta com o banco
 			$.ajax({
 				url: '../../service/login.php',
 				data: {cpf, senha},
@@ -48,6 +52,8 @@ const Form = {
 				success: function(retorno){
 
 					let res =JSON.parse(retorno);
+
+					//verificar aconsistencia do login, caso os dados não sejam compativeis com os do banco entra nesse if e retorna um alert com a mensagem de erro pro usuário se não seta os dados em uma sessão e manda o paciente para a página home e o adm para a página adm
 					if(res.error === true){
 						alert(res.msg);
 					}else{
@@ -57,6 +63,11 @@ const Form = {
 						sessionStorage.setItem('id', res.id);
 						sessionStorage.setItem('cdPosto', res.cdPosto);
 						
+						if(res.accessLevel >= 1){
+							window.location.href = '../Adm/';
+							return;
+						}
+
 						window.location.href = '../Home/';
 					}
 				}
