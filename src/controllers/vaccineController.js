@@ -11,7 +11,7 @@ const Form = {
     category: document.getElementById('category'),
     posto: document.getElementById('posto'),
     
-
+// pegando valores
     getValues(){
         
         return {
