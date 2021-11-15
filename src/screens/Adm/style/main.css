@@ -80,35 +80,78 @@ h3{
     margin-top: 20px;
 }
 
+* input , select {
+    border-radius: 4px;
+    height: 30px;
+    font-size: 16px;
+    font-family: 'Times New Roman', Times, serif;
+    padding-left: 5px;
+}
+
+* textarea{
+    border-radius: 4px;
+    font-size: 14px;
+    font-family: 'Times New Roman', Times, serif;
+    padding: 5px;
+}
+
+/* Validar paciente*/
+
+.containerValidation{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 .validarPaciente{
     margin-top: 10px;
     display: flex;
-    justify-content: flex-start;
-    background-color: bisque;
+    background-color: rgb(255, 237, 215);
     align-items: center;
-    padding-left: 30px;
+    width: 1200px;
+    height: 400px;
+    border: 3px solid black;
+    border-radius: 10px;
+    
 }
 
-.validarPaciente .btnBuscar{
+.validarPaciente .buscarPaciente{
+    display: flex;
+    margin-left: 20px;
+}
+
+
+.buscarPaciente input{
+    margin-left: 30px;
+}
+
+.validarPaciente .itemBtnValidar{
+    display: flex;
+    margin-right: 20px;
+}
+
+.btnBuscar{
     height: 30px;
     background-color: rgb(199, 196, 196);
     color: black;
     border: 1px solid black;
     padding-left: 3px;
     padding-right: 3px;
+    margin-right: 20px;
+    margin-left: 20px;
+    border-radius: 4px;    
 }
 
-.validarPaciente .btnBuscar:hover{
+.btnBuscar:hover{
     background-color: cornflowerblue;
     color: white;
 }
 
-.tabela{
+.validarPaciente .tabela{
     border: 1px solid black;
     margin-top: 10px;
     padding: 20px;
-    margin-left: 20px;
+    margin-left: 50px;
     margin-right: 20px;
 
 }
@@ -122,13 +165,15 @@ h3{
 }
 
 .validarPaciente .btnValidar{
-    min-height: 30px;
+    height: 30px;
     background-color: rgb(199, 196, 196);
     color: black;
     border: 1px solid black;
-    margin-left: 150px;
     padding-left:3px;
     padding-right:3px ;
+    margin-left: 30px;
+
+    border-radius: 4px;
 }
 
 .validarPaciente .btnValidar:hover{
@@ -136,18 +181,34 @@ h3{
     color: white;
     border: 2px solid black;
 }
-/*Cadastrar vacina*/
+
+
+                    /*Cadastrar vacina*/
+
+
+
+.containerCadastrarVacina{
+    display: flex;
+  
+    justify-content: center;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
 
 .cadastrarVacina{
+    margin-top: 10px;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    background-color: cadetblue;
-    margin-top: 5px;
-    padding-left: 30px;
-    
-    height:300px ;
+    background-color: rgb(255, 237, 215);
+   
+    width: 1200px;
+    min-height: 400px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border: 3px solid black;
+    background-color: rgb(247, 244, 244);
+    border: 2px solid rgb(0,0 ,0 , 0.4);
+    border-radius: 10px;
+
 }
 
 .cadastrarVacina input{
@@ -161,6 +222,8 @@ h3{
     border: 1px solid black;
     padding-right: 3px;
     padding-left: 3px;
+    border-radius: 4px;
+    margin-bottom: 20px;
 }
 
 .cadastrarVacina .btnCadastrar:hover{
@@ -168,13 +231,42 @@ h3{
     color: white;
 }
 
-.editarVacina{
+
+.itemCadastrarVacina{
     display: flex;
-    background-color: cadetblue;
+    margin-top: 20px;
+    justify-content: space-between;
+    font-size: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+   
+}
+
+
+
+        /* Editar vacina */
+
+.containerEditarVacina{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+
+
+.editarVacina{
+    margin-top: 10px;
+    display: flex;
+    background-color: rgb(200, 255, 252);
+   
+    width: 1200px;
+    min-height: 400px;
     padding-left: 20px;
     padding-right: 20px;
-    margin-top: 20px;
-    min-height: 80px;
-    align-items: center;
+    border: 3px solid black;
+    border: 2px solid rgb(0,0 ,0 , 0.4);
+    border-radius: 10px;
+    
 }
 

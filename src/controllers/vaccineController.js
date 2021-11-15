@@ -23,7 +23,7 @@ const Form = {
             dateValidity: this.dateValidity.value,
             batch: this.batch.value,
             amountVaccine: this.amountVaccine.value,
-            descripition: this.description.value,
+            description: this.description.value,
             category: this.category.value,
             posto: this.posto.value,
             
@@ -31,8 +31,28 @@ const Form = {
     },
 
     ValidationData(){
-        const {amountVaccine, batch, category, dateManufacturer, dateValidity, descripition, idMedicine, idVaccine, manufacturerVaccine, nameVaccine, posto} = this.getValues();
+        let {amountVaccine, batch, category, dateManufacturer, dateValidity, description, idMedicine, idVaccine, manufacturerVaccine, nameVaccine, posto} = this.getValues();
         
+
+        idVaccine = idVaccine.trim();
+        nameVaccine = nameVaccine.trim().toUpperCase();
+        idMedicine = idMedicine.trim();
+        batch = batch.trim();
+        amountVaccine = amountVaccine.trim();
+
+
+
+        
+        if(idVaccine.length !== 2){
+            throw new Error('Codigo da vacina são apenas 2 digitos');
+        }
+
+        if(idMedicine.length !== 3){
+            throw new Error('Máximo de 3 digitos')
+        }
+
+
+
         return{
             idVaccine,
             nameVaccine,
@@ -42,23 +62,31 @@ const Form = {
             dateValidity,
             batch,
             amountVaccine,
-            descripition,
+            description,
             category,
             posto,
+       
         }
     },
+
+
+    
+
+
+
 
     sendForm(e){
         e.preventDefault();
 
         try {
-            const {amountVaccine, batch, category, dateManufacturer, dateValidity, descripition, idMedicine, idVaccine, manufacturerVaccine, nameVaccine, posto} = this.ValidationData();
+            const {amountVaccine, batch, category, dateManufacturer, dateValidity, description, idMedicine, idVaccine, manufacturerVaccine, nameVaccine, posto} = this.ValidationData();
 
             $.ajax({
                 url: '../../service/vaccineService.php',
-                data: {amountVaccine, batch, category, dateManufacturer, dateValidity, descripition, idMedicine, idVaccine, manufacturerVaccine, nameVaccine, posto},
+                data: {amountVaccine, batch, category, dateManufacturer, dateValidity, description, idMedicine, idVaccine, manufacturerVaccine, nameVaccine, posto},
                 type: 'POST',
                 success: function(response){
+                   
                     const res = JSON.parse(response);
 
                     console.log(res);
@@ -77,5 +105,8 @@ const Form = {
     }
 
 
+
+
 }
+
 

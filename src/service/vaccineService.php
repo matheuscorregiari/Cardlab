@@ -17,23 +17,33 @@ if($_POST){
     $idMedicine = $_POST['idMedicine'];
 
     $insertTbVaccine = 'INSERT INTO tb_vacina VALUES  ('.$idVaccine.',"'.$nameVaccine.'","'.$manufacturerVaccine.'")';
-    $inserTbEstoque = 'INSERT INTO estoque_vac VALUES ('.$idMedicine.',"'.$dateManufacturer.'","'.$dateValidity.'","'.$batch.'",'.$amountVaccine.',"'.$description.'","'.$category.'","'.$posto.'")';
 
-    $responseTbVaccine = $con->query($insertTbVaccine);
-    $responseTbEstoque = $con->query($inserTbEstoque);
+    $inserTbEstoque = 'INSERT INTO estoque_vac VALUES ('.$idMedicine.',"'.$dateManufacturer.'","'.$dateValidity.'","'.$batch.'",'.$amountVaccine.',"'.$description.'","'.$category.'","'.$posto.'",'.$idVaccine.')';
 
-    if($responseTbVaccine == 1 && $responseTbEstoque == 1){
-        $dados['message'] = 'Cadastro efetuado com sucesso!';
-        $dados['error'] = false;
-        echo json_encode($dados);
-        die;
-    }else{
-        $dados['message'] = 'Erro ao efetuar cadastro!';
-        $dados['error'] = true;
-        echo json_encode($dados);
-        die;
-    }
+    if($con->query($insertTbEstoque) && $con->query($insertTbVaccine)){
 
+    
+
+        $responseTbEstoque = $con->query($inserTbEstoque);
+        $responseTbVaccine = $con->query($insertTbVaccine);
+    
+    
+
+        if($responseTbVaccine == 1){
+            $dados['message'] = 'Cadastro efetuado com sucesso!';
+            $dados['error'] = false;
+            echo json_encode($dados);
+            die;
+        }else{
+            $dados['message'] = 'Erro ao efetuar cadastro!';
+            $dados['error'] = true;
+            echo json_encode($dados);
+            die;
+        }
+    } 
+    $dados['message'] = 'Falha na execução cusao';
+    $dados['error'] = true;
+    echo json_encode($dados);
 }
 
 

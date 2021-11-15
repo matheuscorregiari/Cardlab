@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="./style/main.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script defer src="../../controllers/vaccineController.js"></script>
+    <script defer src="../../controllers/validationVaccine.js"></script>
     <title>Bem vindo adm</title>
 </head>
 <body>
@@ -36,100 +37,164 @@
         
         
         <h3>Validar na carteira de vacina do paciente</h3>
-        <div class="validarPaciente">
-            <form action="" method="POST">
-                <label for="cpf">Digite o CPF:</label>
-                <input type="text" placeholder="buscar pelo cpf">
+        <div class="containerValidation">
+            <div class="validarPaciente">
+                <form action="" method="POST" onsubmit="ValidationVaccine.sendData(event)">
+                    <div class="buscarPaciente">
+                        <label for="cpf">Digite o CPF:</label>
+                        <input type="text" placeholder="buscar pelo cpf" id="searchCpf">
 
-                <button class="btnBuscar" type="submit">Buscar</button>
-            </form>      
-            <table class="tabela"> 
-                <thead>
-                    <tr>
-                        <th>Nr carteira</th>
-                        <th>Vacina</th>
-                        <th>Fabricante</th>
-                        <th>Data agendada</th>
-                        <th>proxima dose</th>
-                        <th>Posto de saúde</th>
-                        <th>Descrição</th>
-                    </tr>
-                </thead>
-                <tbody id="body">
-                </tbody>
-            </table>
-            confirmar vacinação:
-            <input type="checkbox">
-
-            <button class="btnValidar">Validar</button>
+                        <button class="btnBuscar" type="submit" >Buscar</button>
+                    </div>
+                </form>      
+                <table class="tabela" id="table"> 
+                    <thead>
+                        <tr>
+                            <th>Nr carteira</th>
+                            <th>Vacina</th>
+                            <th>Fabricante</th>
+                            <th>Data agendada</th>
+                            <th>proxima dose</th>
+                            <th>Posto de saúde</th>
+                            <th>Descrição</th>
+                        </tr>
+                    </thead>
+                </table>
+                confirmar vacinação:
+                <input type="checkbox">
+                <div class="itemBtnValidar">
+                    <button class="btnValidar">Validar</button>
+                </div>    
+            </div>
         </div>
+
 
         <h3>Cadastrar nova vacina</h3>
-        <div class="cadastrarVacina">
-            <form action="" method="POST" onsubmit="Form.sendForm(event)">
-               
-                    <label for="cdvacina">Codigo da vacina (2 digitos):</label>
-                    <input type="number" placeholder="Digite o codigo" id="idVaccine">
-             
+           <div class="containerCadastrarVacina">
+            <div class="cadastrarVacina">
+                <form action="" method="POST" onsubmit="Form.sendForm(event)">
                 
-                    <label for="nmvacina">Nome da vacina:</label>
-                    <input type="text" placeholder="digite o nome" id="nameVaccine">
-               
-              
-                    <label for="fbvac">Fabricante:</label>
-                    <input type="text" placeholder="Digite o fabricante" id="manufacturerVaccine">
-               
+                    <div class="itemCadastrarVacina">
+                            <label for="cdvacina">Codigo da vacina (2 digitos):</label>
+                            <input type="number" placeholder="Digite o codigo" id="idVaccine">
+                    
+                        
+                            <label for="nmvacina">Nome da vacina:</label>
+                            <input type="text" placeholder="digite o nome" id="nameVaccine">
                     
                     
-                    <br>
+                            <label for="fbvac">Fabricante:</label>
+                            <input type="text" placeholder="Digite o fabricante" id="manufacturerVaccine">
+                    
+                        </div>
+                        
+                        
+                        <div class="itemCadastrarVacina">    
+                            <label for="cdmedicamento">Codigo do medicamento:</label>
+                            <input type="number" placeholder="digite o codigo" id="idMedicine">
 
-                    <label for="cdmedicamento">Codigo do medicamento</label>
-                    <input type="number" placeholder="digite o codigo" id="idMedicine">
+                            <label for="dtfab">Data de fabricação:</label>
+                            <input type="date" id="dateManufacturer">
 
-                    <label for="dtfab">Data de fabricação:</label>
-                    <input type="date" id="dateManufacturer">
+                            <label for="dtval">Data de validade:</label>
+                            <input type="date" id="dateValidity">
+                        </div>    
+                        
+                        <div class="itemCadastrarVacina">    
+                            <label for="lote">Lote:</label>
+                            <input type="text" placeholder="digite o lote" id="batch">
+                            
+                            <label for="qntvac">Quantidade:</label>
+                            <input type="number" placeholder="digite a quantidade" id="amountVaccine">
 
-                    <label for="dtval">Data de validade:</label>
-                    <input type="date" id="dateValidity">
+                        
 
-                    <label for="lote">Lote:</label>
-                    <input type="text" placeholder="digite o lote" id="batch">
+                            <label for="categoria">Faixa etaria:</label>
+                            <select name="categoria" id="category">
+                                <option value="recem-nascido">recem-nascido</option>
+                                <option value="criança">criança</option>
+                                <option value="adolescente">adolescente</option>
+                                <option value="adulto">adulto</option>
+                                <option value="idoso">idoso</option>
+                            </select>
+                        </div>    
+                        <div class="itemCadastrarVacina">    
+                            <label for="posto">Para qual posto?</label>
+                            <select name="posto" id="posto">
+                                <option value="01">USFLOTY</option>
+                            </select>
+                            
+                            <label for="desc">Descrição da vacina:</label>
+                            <textarea name="desc" cols="30" rows="10" id="description"></textarea>
+                        </div>    
+                        <button class="btnCadastrar">Cadastrar</button>
 
-                    <label for="qntvac">Quantidade:</label>
-                    <input type="number" placeholder="digite a quantidade" id="amountVaccine">
-
-                    <label for="desc">Descrição da vacina</label>
-                    <textarea name="desc" cols="30" rows="10" id="description">Descrição da vac</textarea>
-
-                    <label for="categoria">Faixa etaria:</label>
-                    <select name="categoria" id="category">
-                        <option value="recem-nascido">recem-nascido</option>
-                        <option value="criança">criança</option>
-                        <option value="adolescente">adolescente</option>
-                        <option value="adulto">adulto</option>
-                        <option value="idoso">idoso</option>
-                    </select>
-
-                    <label for="posto">Para qual posto?</label>
-                    <select name="posto" id="posto">
-                        <option value="01">USFLOTY</option>
-                    </select>
-
-                    <button class="btnCadastrar">Cadastrar</button>
-
-            </form>
-        </div>
-
+                </form>
+            </div>
+        </div>    
         <h3>Editar vacina</h3>
-        <div class="editarVacina">
-            <form action="" method="POST">
-                <label for="cdvac">Cd vacina:</label>
-                <input type="number" placeholder="Buscar pelo cd">
+            
+        <div class="containerEditarVacina">
+            <div class="editarVacina">
+                <form action="" method="POST">
+                    <div class="itemCadastrarVacina">
+                        <label for="cdvacina">Codigo da vacina (2 digitos):</label>
+                        <input type="number" placeholder="Digite o codigo" id="idVaccine">
+                
+                    
+                        <label for="nmvacina">Nome da vacina:</label>
+                        <input type="text" placeholder="digite o nome" id="nameVaccine">
+                
+                
+                        <label for="fbvac">Fabricante:</label>
+                        <input type="text" placeholder="Digite o fabricante" id="manufacturerVaccine">
+                
+                    </div>
+                    
+                    
+                    <div class="itemCadastrarVacina">    
+                        <label for="cdmedicamento">Codigo do medicamento:</label>
+                        <input type="number" placeholder="digite o codigo" id="idMedicine">
 
-                <label for="qntvac">Alterar quantidade:</label>
-                <input type="number" placeholder="Digite a quantidade">
-            </form>
-        </div>
+                        <label for="dtfab">Data de fabricação:</label>
+                        <input type="date" id="dateManufacturer">
+
+                        <label for="dtval">Data de validade:</label>
+                        <input type="date" id="dateValidity">
+                    </div>    
+                    
+                    <div class="itemCadastrarVacina">    
+                        <label for="lote">Lote:</label>
+                        <input type="text" placeholder="digite o lote" id="batch">
+                        
+                        <label for="qntvac">Quantidade:</label>
+                        <input type="number" placeholder="digite a quantidade" id="amountVaccine">
+
+                    
+
+                        <label for="categoria">Faixa etaria:</label>
+                        <select name="categoria" id="category">
+                            <option value="recem-nascido">recem-nascido</option>
+                            <option value="criança">criança</option>
+                            <option value="adolescente">adolescente</option>
+                            <option value="adulto">adulto</option>
+                            <option value="idoso">idoso</option>
+                        </select>
+                    </div>    
+                    <div class="itemCadastrarVacina">    
+                        <label for="posto">Para qual posto?</label>
+                        <select name="posto" id="posto">
+                            <option value="01">USFLOTY</option>
+                        </select>
+                        
+                        <label for="desc">Descrição da vacina:</label>
+                        <textarea name="desc" cols="30" rows="10" id="description"></textarea>
+                    </div>    
+                    <button class="btnBuscar">Alterar</button>
+
+                </form>
+            </div>
+        </div>    
     </main>
 
 </body>
