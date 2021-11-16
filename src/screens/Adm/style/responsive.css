@@ -1,0 +1,35 @@
+@media screen and (max-width:800px){
+    header.container{
+        display: flex;
+        flex-direction: column;
+        
+      padding: 20px;
+
+        height: auto;
+        width: auto;
+    }
+
+    header img{
+      margin-right: 60px;
+    }
+
+    .containerValidation , .validarPaciente , .tabela{
+        display: flex;
+        flex-direction: column;
+
+        width: auto;
+        height: auto;
+       
+    }
+
+    .containerCadastrarVacina, .cadastrarVacina, .itemCadastrarVacina, .containerEditarVacina, .editarVacina{
+        display: flex;
+        flex-direction: column;
+
+        width: auto;
+        height: auto;
+    } 
+
+
+ 
+}

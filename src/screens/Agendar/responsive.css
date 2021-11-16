@@ -1,0 +1,29 @@
+@media screen and (max-width:800px){
+    header.container{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        padding: 20px;
+        min-height:240px;
+        justify-content: center;
+      
+    }
+
+    header.container.itemOpen{
+        align-items: center;
+    }
+
+ 
+    .containerAgendamento2 .containerAgendamento{
+        display: flex;
+        flex-direction: column;
+       padding: 20px ;
+        text-align: center;
+        ;
+        width: auto;
+        height: auto;
+    }
+
+ 
+
+}
