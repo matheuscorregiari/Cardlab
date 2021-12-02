@@ -101,6 +101,7 @@ h3{
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .validarPaciente{
@@ -108,16 +109,17 @@ h3{
     display: flex;
     background-color: rgb(255, 237, 215);
     align-items: center;
-    width: 1200px;
+    flex-direction: column;
+    width: 90%;
     height: 400px;
     border: 3px solid black;
-    border-radius: 10px;
-    
+    border-radius: 10px;    
 }
 
 .validarPaciente .buscarPaciente{
     display: flex;
-    margin-left: 20px;
+    margin-top: 30px;
+    align-items: center;
 }
 
 
@@ -153,11 +155,12 @@ h3{
     padding: 20px;
     margin-left: 50px;
     margin-right: 20px;
-
+    margin-top: 30px;
 }
 
 .tabela th ,td{
-    width: 20%;
+    min-width: 150px;
+    flex-wrap: wrap;
 }
 
 .tabela td{
@@ -171,8 +174,7 @@ h3{
     border: 1px solid black;
     padding-left:3px;
     padding-right:3px ;
-    margin-left: 30px;
-
+    margin-top: 80px;
     border-radius: 4px;
 }
 
@@ -199,8 +201,8 @@ h3{
     margin-top: 10px;
     display: flex;
     background-color: rgb(255, 237, 215);
-   
-    width: 1200px;
+    justify-content: center;
+    width: 90%;
     min-height: 400px;
     padding-left: 20px;
     padding-right: 20px;
@@ -215,6 +217,10 @@ h3{
     margin-right: 10px;
 }
 
+.cadastrarVacina label{
+    margin-top: 30px;
+}
+
 .cadastrarVacina .btnCadastrar{
     height: 30px;
     background-color: rgb(199, 196, 196);
@@ -224,6 +230,7 @@ h3{
     padding-left: 3px;
     border-radius: 4px;
     margin-bottom: 20px;
+    margin-top: 40px;
 }
 
 .cadastrarVacina .btnCadastrar:hover{
@@ -234,6 +241,7 @@ h3{
 
 .itemCadastrarVacina{
     display: flex;
+    flex-direction: column;
     margin-top: 20px;
     justify-content: space-between;
     font-size: 20px;
@@ -258,9 +266,11 @@ h3{
 .editarVacina{
     margin-top: 10px;
     display: flex;
+    flex-direction: column;
     background-color: rgb(200, 255, 252);
-   
-    width: 1200px;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
     min-height: 400px;
     padding-left: 20px;
     padding-right: 20px;
@@ -269,4 +279,11 @@ h3{
     border-radius: 10px;
     
 }
+
+#newVaccine select, button, input{
+    justify-content: center;
+}
+
+
+
 

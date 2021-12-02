@@ -25,9 +25,7 @@ if($_POST){
 	}	
 
 	$query2 = $con->query($teste2);
-
-
-
+	
 	if($query2->num_rows>0) {
 		$result = $query2->fetch_row();
 		$dados['error']=false;

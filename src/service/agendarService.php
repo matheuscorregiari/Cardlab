@@ -9,17 +9,24 @@ if($_POST) {
     $date= $_POST['date'];
     $post= $_POST['posto'];
     $vaccine= $_POST['vaccine'];
-  //  $dateNextDose = $_POST['dateNextDose'];
+    $dateNextDose = $_POST['dateNextDose'];
 
-    $sql = 'INSERT INTO tb_carteira VALUES (NULL, '.$vaccine.', "'.$date.'", "2021-03-22", '.$post.','.$userId.')';
+    $sql = 'INSERT INTO tb_carteira VALUES (NULL, '.$vaccine.', "'.$date.'", "'.$dateNextDose.'", '.$post.','.$userId.')';
 
     $query = $con->query($sql);
 
     if($query == 1){
-		echo "agendamento concluído";
-	}else{
-		echo "erro ao agendar".$con->error;
-	}
+      $dados['error'] = false;
+      $dados['message'] = "agendamento concluído";
+
+		  echo json_encode($dados);
+      die;
+    }else{
+      $dados['error'] = true;
+      $dados['message'] = "erro ao agendar".$con->error;
+
+		  echo json_encode($dados);
+    }
 
 }
 

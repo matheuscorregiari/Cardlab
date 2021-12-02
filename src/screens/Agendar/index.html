@@ -12,24 +12,38 @@
     <script defer src="../../controllers/setup.js"></script>
     <script defer src="../../controllers//agendarController.js"></script>
 
+    <script>
+        const user = sessionStorage.getItem('accessLevel');
+
+        function userSignIn() {
+            if(user === '' || user === null){
+                alert('Você tem que logar para acessar essa página!')
+                window.location.assign('../Home/');
+            }
+        }
+
+        function logout() {
+            sessionStorage.clear();
+            window.location.assign('../Home/');
+        }
+
+    </script>
+
 </head>
 
-<body>
+<body onload="userSignIn()">
     <!--Menu lateral-->
     <div class="sidebar" id="mySidebar">
         <button class="itemClose" onclick="closeSidebar()" id="itemClose">Close &times;</button>
         <div class="itemSidebar">
-            <p href="../Agendar/">Agendar Vacina!</p>
+            <p><a href="../Agendar/">Agendar Vacina!</a></p>
         </div>    
         <div class="itemSidebar">
-            <p href="../MostrarCarteira/">Abrir Cardlab</p>
+            <p><a href="../MostrarCarteira/">Abrir Cardlab</a></p>
         </div>    
         <div class="itemSidebar">
             <p href="#">Localizações</p>
-        </div>
-        <div class="itemSidebar"> 
-            <p href="#">Configurações</p>
-        </div>     
+        </div>   
             
     </div>
 
@@ -46,11 +60,8 @@
             <a href="#">Informações</a>
         </div>
         <div class="botao">
-            <button id="botaoCadastro">
-                Cadastrar
-            </button>
-            <button id="botaoEntrar">
-                Entrar
+            <button id="botaoCadastro" onclick="logout()">
+                Sair
             </button>
         </div>
 

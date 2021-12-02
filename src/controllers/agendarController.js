@@ -23,26 +23,53 @@ const FORM = {
             
             const { date,vaccine} = this.getValues();
             
+            function calculeteDate() {
+                const data = new Date(date);
+            
+                    let dia = String(data.getDate()+1).padStart(2, '0');
+                    let mes = String(data.getMonth() + 4).padStart(2, '0');
+                    let ano = data.getFullYear();
 
-            /*let [year, month, day ] = date.split('-');
-            month = Number(month)+2;
 
-            const dateNextDose = new Date(Number(year), month, Number(day));
-            console.log(dateNextDose);
-            var time = new Date(date);
-            var outraData = new Date();
-            outraData.setDate(time.getDate() + 90); */
-            //console.log(outraData)
+                if(mes > 12){
+
+                    switch (mes) {
+                        case '13':
+                            mes = '01';
+                            break;
+                        case '14':
+                            mes = '02';
+                            break;
+                        case '15':
+                            mes = '03';
+                            break;
+                        default:
+                            break;
+                    }
+                    ano++;
+                }
+                let dataAtual = `${ano}-${mes}-${dia}`;
+
+                return dataAtual;
+            }
+
+            const dateNextDose = calculeteDate();
 
 
             $.ajax({
                 url: '../../service/agendarService.php',
-                data: { date, vaccine, userId, posto},
+                data: { date, vaccine, userId, posto, dateNextDose },
                 type: 'POST',
                 success: function(response) {
-                    console.log(response);
+                    let res = JSON.parse(response);
+                    if(res.error === true){
+                        alert(res.message);
+                    } else {
+                        alert(res.message);
+                        window.location.assign('../Home/');
+                    }
                 }
-            })
+            });
         } catch (error) {
             alert(error.message);
         }

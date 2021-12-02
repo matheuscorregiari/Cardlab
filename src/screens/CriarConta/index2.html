@@ -1,0 +1,225 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Cardlab - Cadastro</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+
+	<!-- Jquery -->
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+	<script defer src="../../controllers/cadastrar.js"></script>
+
+</head>
+<body>
+
+
+		<nav id="nav" class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom"style="text-align: center;">
+    <a class="navbar-brand" href="index.html">
+      <img id="logo" src="../../img/cardlab-logo-top.png" title="CARDLAB" alt="" width="auto" height="50">
+    </a>
+
+    <ul style="padding-right: 5rem" class="nav col-md-auto mb-2 align-items-center justify-content-center mb-2 md-0 text-dark">
+      <li><a href="../Home/" class="nav-link px-2 link-dark">INICIO</a></li>
+      <li><a href="noticias.html" class="nav-link px-2 link-dark">NOTÍCIAS</a></li>
+      <li><a href="informacoes.html" class="nav-link px-2 link-dark">INFORMAÇÕES</a></li>
+    </ul>
+  </nav>
+
+		<!-- formulário -->
+
+		<div class="container-fluid">
+		<form id="form" class="row g-3" onsubmit="Form.received(event)" method="POST">
+			 <h1>Criar Conta</h1>
+          <div class="col-md-6">
+            <label for="inputEmail4" class="form-label"><h5>Email</h5></label>
+            <input type="email" class="form-control" id="email" name="email">
+          </div>
+          <div class="col-md-6">
+            <label for="inputPassword4" class="form-label"><h5>Senha</h5></label>
+            <input type="password" class="form-control" id="senha" name="senha">
+            
+          </div>
+          <div class="col-md-4">
+            <label class="form-label" for="telefone"><h5>Telefone</h5></label>
+            <input class="form-control" type="text" id="telefone" name="telefone" placeholder="(xx)xxxxx-xxxx">
+
+          </div>
+          <div class="col-md-4">
+            <label class="form-label" for="telefone2"><h5>telefone 2</h5></label>
+            <input class="form-control" type="text" id="telefone2" name="telefone2" placeholder="(xx) xxxxx-xxxx">
+            <label>(opcional)</label>
+          </div>
+          <div class="col-md-4">
+            <br>
+            <h5>Sexo:</h5>
+            <div class="form-check">
+          <input class="form-check-input" type="radio" name="sexo" id="exampleRadios1" value="m">
+          <label class="form-check-label" for="exampleRadios1">
+            Masculino
+          </label>  
+        </div>
+
+
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="sexo" id="exampleRadios2" value="f">
+          <label class="form-check-label" for="exampleRadios2">
+            Feminino
+          </label>
+        </div>
+          </div>
+
+          <div class="col-12">
+            <label for="nome" class="form-label"><h5>Nome completo</h5></label>
+            <input type="text" class="form-control" id="nome" name="nome" placeholder="Digite seu nome completo">
+          </div>
+          <div class="col-12">
+            <label for="endereco" class="form-label"><h5>Endereço</h5></label>
+            <input type="text" class="form-control" id="endereco" name="endereco" placeholder="rua jose, n 343, prox. a padaria">
+          </div>
+          
+          <!-- <div class="col-md-2">
+            <label for="inputZip" class="form-label"><h5>CEP</h5></label>
+            <input type="text" class="form-control" id="">
+          </div> -->
+          
+          <div class="col-md-2">
+            <label for="posto">Selecione o posto:</label>
+                <select id="posto" name="posto">
+                    <option value="01">USF LOTY</option>
+                    <option value="02">USF SAVOY</option>
+                    <option value="03">USF GUAPIRANGA</option>
+                    <option value="04">USF CENTRO</option>
+                    <option value="05">USF GRANDESP</option>
+                    <option value="06">USF SUARAO</option>
+                    <option value="07">USF OASIS</option>
+                    <option value="08">USF BELAS ARTES</option>
+                    <option value="09">USF GAIVOTA</option>
+                </select>
+              </div>
+          
+
+          <div class="col-md-2">
+            <label for="tpsang" class="form-label"><h5>Tipo sanguíneo</h5></label>
+            <select id="tpsang" name="tpsang" class="form-select">
+              <option selected>O+</option>
+              <option>O-</option>
+              <option>AB+</option>
+              <option>AB-</option>
+              <option>A+</option>
+              <option>A-</option>
+              <option>B+</option>
+              <option>B-</option>
+            </select>
+          </div>
+
+          <div class="col-md-4">
+            <label class="form-label" for="rg"><h5>RG</h5></label>
+            <input class="form-control" type="text" id="rg" name="rg" placeholder="xx.xxx.xxx-x">
+          </div>
+
+          <div class="col-md-4">
+            <label class="form-label" for="cpf"><h5>CPF</h5></label>
+            <input class="form-control" type="text" id="cpf" name="cpf" placeholder="xxx.xxx.xxx/xx">
+          </div>
+          <br>
+
+          <div class="col-md-4">
+            <label class="form-label" for="dtnasc"><h5>Data de nascimento</h5></label>
+            <input class="form-control" type="date" id="dtnasc" name="dtnasc">
+          </div>
+           <div class="col-12">
+            <input type="submit" value="Criar Conta" class="col-sm-12">
+          </div>
+
+          <br>
+
+</form>
+
+	
+	</div>
+
+
+</body>
+<style type="text/css">
+
+  *{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  } 
+
+  #logo{
+      padding: 0 5rem;
+      padding-right: 2rem;
+    }
+
+  #nav{
+    background-color: white;
+  }
+
+  textarea:focus, input:focus{     /*Tirar borda quando seleciona um itém*/
+  outline: none;
+  }
+
+  #cadastro{
+    margin-bottom: 5%;
+  }
+
+  #form{
+    max-width: 1000px;
+    min-height: 20vw;
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    border-radius: 5%;
+    background-color: #FFF;
+    padding: 20px 30px; /*Afastar elementos da borda*/
+    padding-top: 20px;
+  }
+
+  body{
+    background-color: #aecbe9;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  input[type=text] {
+    border: none;
+    border-bottom: 2px solid black;
+    background: transparent;
+  }
+
+  input[type=password] {
+    border: none;
+    border-bottom: 2px solid black;
+    background: transparent;
+  }
+  h1{
+    text-align: center;
+  }
+
+  input[type="submit"]{
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  border: none;
+  height: 40px;
+  border-radius: 20px;
+  color: #FFF;
+  background-color: #aecbe9;
+  cursor: pointer;
+
+}
+
+input[type="submit"]:hover{
+  background-color: #08558B;
+  transition: .5s; 
+}
+</style>
+</html>

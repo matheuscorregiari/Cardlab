@@ -1,0 +1,176 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+}
+
+    /* BARRA DE NAVEGAÇÃO */
+
+header.container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    border: 1px solid black;
+    height: 80px;
+    background-color: rgba(239, 244, 252, 0.938);
+    box-shadow: 1px 2px 2px rgb(0, 0, 0, 0.88);
+    width: 100%;
+}
+
+header .itemOpen{
+    background-color:rgba(239, 244, 252, 0.938) ;
+    width: 50px;
+    height: 50px;
+    margin-left: 20px;
+    justify-content: flex-start;
+    border: none;
+    font-size: 30px;
+}
+
+header .itemOpen:hover{
+    background-color: rgb(0, 0, 0,0.30);
+}
+
+header img{
+    max-width: 200px;
+    max-height: 200px;
+    width: auto;
+    height: auto;
+    justify-content: left;
+    margin-right: 300px;
+    
+
+ 
+}
+
+.menu{
+    display: flex;
+    
+   
+}
+
+.menu a{
+    text-decoration: none;
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    margin-left: 30px;
+    color: rgba(39, 38, 38, 0.788);
+    
+    
+}
+
+header .botao{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-right: 20px;
+}
+
+.botao #botaoCadastro{
+    background-color: rgb(0,0 ,0 , 0.4);
+    border: 1px solid black;
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    padding: 5px;
+    font-weight: 600;
+    border-radius: 6%;
+    height: 50px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-right: 10px;
+}
+
+.botao #botaoEntrar{
+    background-color: rgb(0,0 ,0 , 0.4);
+    border: 1px solid black;
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    padding: 5px;
+    font-weight: 600;
+    border-radius: 6%;
+    height: 50px;
+    padding-left: 10px;
+    padding-right: 10px;
+
+}
+
+.menu a:hover{
+    color: rgb(0, 0, 0);
+    text-decoration: underline;
+}
+
+#botaoCadastro:hover{
+    background-color: rgba(10, 10, 133, 0.747);
+    color: antiquewhite;
+    border: 2px solid black;
+    
+}
+
+#botaoEntrar:hover{
+    background-color: rgba(0, 100, 0, 0.863);
+    color: antiquewhite;
+    border: 2px solid black;
+}
+
+
+        /* Container form*/
+
+main{
+    display: flex;
+    justify-content: center;
+}
+
+.containerForm{
+    display: flex;
+    margin-top: 20px;
+    border: 2px solid black;
+    box-shadow:  1px 1px 1px black ;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: rgba(239, 244, 252, 0.938) ;
+    
+    
+}
+
+.containerForm .itemForm{
+    padding: 10px;
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 400px;    
+}
+
+.itemForm label{
+    margin-top: 20px;
+}
+
+.itemForm input, select{
+    padding: 10px;
+    margin-left: 5px;
+    border-radius: 6px;
+}
+
+.btnCadastrar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btnCadastrar button{
+    padding: 10px;
+    width: 200px;
+    margin-top: 30px;
+    border-radius: 30px;
+    border: none;
+
+    background-color: rgba(30, 143, 255, 0.678);
+    color: rgba(255, 255, 255, 0.664);
+    
+}
+
+.btnCadastrar button:hover{
+    background-color: dodgerblue;
+    color: white;
+    font-weight: 700;
+}

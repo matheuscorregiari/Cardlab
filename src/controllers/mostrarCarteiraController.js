@@ -19,21 +19,27 @@ const TABLE = {
                 
                let userData = JSON.parse(response);
 
-               console.log(userData)
+               console.log(userData);
 
-               userData.map(info => {
-                tbody.innerHTML += `
-                    <tr>
-                        <td>${info.CDCARTEIRA}</td>
-                        <td>${info.NMVACINA}</td>
-                        <td>${info.FABRICANTE}</td>
-                        <td>${info.DT_VAC_APLIC}</td>
-                        <td>${info.DT_PROX_DOSE}</td>
-                        <td>${info.NMPOSTO}</td>
-                        <td>APLICACAO EM DUAS DOSES, SENDO A SEGUNDA ENTRE 14 E 62 DIAS.</td>
-                    <tr>
-                    `;
-               })
+                if(userData.error === true) {
+                   alert(userData.message);
+                   window.location.assign('../Home/');
+                } else {
+                    
+                    userData.data.map(info => {
+                        tbody.innerHTML += `
+                            <tr>
+                                <td>${info.CDCARTEIRA}</td>
+                                <td>${info.NMVACINA}</td>
+                                <td>${info.FABRICANTE}</td>
+                                <td>${info.DT_VAC_APLIC}</td>
+                                <td>${info.DT_PROX_DOSE}</td>
+                                <td>${info.NMPOSTO}</td>
+                                <td>${info.TEXTVAC}</td>
+                            <tr>
+                            `;
+                    });
+                }
             }
         })
        

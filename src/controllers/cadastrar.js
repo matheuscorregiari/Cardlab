@@ -137,20 +137,22 @@ const Form = {
 
         //impede que atualiza a pag até ao enviar do form
         event.preventDefault();
-
+        console.log('a')
 
         try {
             //chamando uma sequencia de métodos que vai desde pegar os valores até a realização da validação
-            const { cidade, cpf, dtnasc, tpsang, email, endereco, nome, rg, estado, senha, sexo, telefone, telefone2, posto } = this.valid();
+            const { cpf, dtnasc, tpsang, email, endereco, nome, rg, senha, sexo, telefone, telefone2, posto } = this.valid();
 
             //enviando os dados para o PHP para fazer a consulta com o banco
             $.ajax({
                 url: '../../service/criarContaService.php',
-                data: { email, telefone, cidade, cpf, dtnasc, estado, tpsang, endereco, nome, rg, senha, sexo, telefone2, posto },
+                data: { email, telefone, cpf, dtnasc, tpsang, endereco, nome, rg, senha, sexo, telefone2, posto },
                 type: 'POST',
                 success: function (response) {
-
+                  
                     const res = JSON.parse(response);
+
+                    console.log(res)
 
                     //verificando se o cadastro foi um sucesso caso não por algum motivo entra no if e mostra a mensagem de erro personalizada se não entra no else e seta os dados do usuário na sessão e redireciona o usuário
                     if (res.success == false) {

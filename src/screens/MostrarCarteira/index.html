@@ -11,9 +11,25 @@
     <link rel="stylesheet" href="../estilo/mainResponsive.css">
     <script defer src="../../controllers/setup.js"></script>
     <script defer src="../../controllers/mostrarCarteiraController.js"></script> 
+
+    <script>
+        const user = sessionStorage.getItem('accessLevel');
+
+        function userSignIn() {
+            if(user === '' || user === null){
+                alert('Você tem que logar para acessar essa página!')
+                window.location.assign('../Home/');
+            }
+        }
+
+        function logout() {
+            sessionStorage.clear();
+            window.location.assign('../Home/');
+        }
+    </script>
 </head>
 
-<body>
+<body onload="userSignIn()">
 
     <!--Menu lateral-->
     <div class="sidebar" id="mySidebar">
@@ -38,11 +54,8 @@
             <a href="#">Informações</a>
         </div>
         <div class="botao">
-            <button id="botaoCadastro">
-                Cadastrar
-            </button>
-            <button id="botaoEntrar" onclick="login()">
-                Entrar
+            <button id="botaoEntrar" onclick="logout()">
+                Sair
             </button>
         </div>
 
@@ -52,7 +65,7 @@
                 <table id="table">
                     <thead>
                         <tr>
-                            <th>Nr carteira</th>
+                            <th>Nr registro</th>
                             <th>Vacina</th>
                             <th>Fabricante</th>
                             <th>Data agendada</th>

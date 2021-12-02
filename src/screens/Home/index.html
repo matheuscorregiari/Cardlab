@@ -1,61 +1,149 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../estilo/main.css">
+    <link rel="stylesheet" href="./main.css">
     <link rel="stylesheet" href="../estilo/mainResponsive.css">
-       
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script defer src="../../controllers/setup.js"></script>
     <title>Cardlab</title>
 </head>
+
 <body>
 
-   <!--Menu lateral-->
-   <div class="sidebar" id="mySidebar">
-        <button class="itemClose" onclick="closeSidebar()" id="itemClose">Close &times;</button>
-        
+    <!--Menu lateral-->
+    <div class="sidebar" id="mySidebar">
+        <button class="itemClose" onclick="closeSidebar()" id="itemClose">Fechar &times;</button>
+
+        <div class="itemSidebar">
             <a href="../Agendar/">Agendar Vacina!</a>
-    
+        </div>
+        <div class="itemSidebar">
             <a href="../MostrarCarteira/">Abrir Cardlab</a>
-    
+        </div>
+        <div class="itemSidebar">
             <a href="../CriarConta/">Criar conta</a>
-    
-            <a href="#">Configurações</a> 
-   </div>
-   
-   
+        </div>
+
+    </div>
+
+
     <header class="container">
         <button class="itemOpen" onclick="openSidebar()" id="itemOpen">☰</button>
-        <img src="../../src/img/cardlab-logo-top.png" alt="logo">
-            <div class="menu">
-                <div class="itemMenu">   
-                    <a href="#">Início</a>
-                </div>
-                <div class="itemMenu">
-                    <a href="#">Notícias</a>
-                </div>
-                <div class="itemMenu">
-                    <a href="#">Informações</a>
-                </div>
+        <img src="../../img/cardlab-logo-top.png" alt="logo">
+        <div class="menu">
+            <div class="itemMenu">
+                <a href="#">Início</a>
             </div>
-                <div class="botao">
-                    <button id="botaoCadastro">
-                        Cadastrar
-                    </button>
-                    <button id="botaoEntrar">
-                        Entrar
-                    </button>
-                </div>
-           
+            <div class="itemMenu">
+                <a href="#">Notícias</a>
+            </div>
+            <div class="itemMenu">
+                <a href="">Informações</a>
+            </div>
+        </div>
+        <div class="botao">
+            <a href="../CriarConta/index.html">
+                <button id="botaoEntrar">
+                    Cadastrar
+            </button></a>
+            <a href="../Login/index.html"><button id="botaoEntrar">
+                Entrar
+            </button></a>
+        </div>
+
     </header>
 
+
+    <main>
+
+        <h2 class="tituloContainer">Noticias em destaque</h2>
+
+        <div class="containerDestaque">
+
+            <div class="destaque1">
+                <div class="botaoDestaque">
+                    <a href="https://www.cnnbrasil.com.br/saude/cnm-44-dos-municipios-vacinaram-adolescentes-e-decisao-da-saude-gera-confusao/"
+                        target="new_blank" hidden>Leia mais!</a>
+                    </div>
+            </div>
+
+            <div class="destaque2">
+                <div class="botaoDestaque">
+                    <a href="https://www.cnnbrasil.com.br/saude/19-capitais-e-distrito-federal-vacinam-contra-covid-19-neste-sabado-18/" target="new_blank">Leia mais!</a>
+                </div>
+            </div>
+           
+             <div class="destaque3">
+                <div class="botaoDestaque">
+                    <a href="https://www.cnnbrasil.com.br/saude/vietna-aprova-vacina-cubana-abdala-enquanto-vive-surto-da-variante-delta/" target="new_blank">Leia mais!</a>
+                </div>
+            </div>
+
+            <div class="destaque4">
+                <div class="botaoDestaque">
+                    <a href="https://www.sc.gov.br/noticias/temas/coronavirus/vacinacao-em-sc-estado-reduz-intervalo-da-pfizer-e-mantem-estrategia-para-adolescentes-de-12-a-17-anos" target="new_blank">Leia mais!</a>
+                </div>
+            </div>
+
+            <div class="destaque5">
+                <div class="botaoDestaque">
+                    <a href="https://www.saopaulo.sp.gov.br/noticias-coronavirus/sp-conclui-entrega-de-100-milhoes-de-doses-da-coronavac-ao-ministerio-da-saude/" target="new_blank">Leia mais!</a>
+                </div>
+            </div>
+
+            <div class="destaque6">
+                <div class="botaoDestaque">
+                    <a href="https://www.saopaulo.sp.gov.br/noticias-coronavirus/vacinacao-com-coronavac-reduziu-em-88-as-mortes-de-pessoas-com-mais-de-70-anos-no-pais/" target="new_blank">Leia mais!</a>
+                </div>
+            </div>
+
+            <div class="destaque7">
+                <div class="botaoDestaque">
+                    <a href="https://veja.abril.com.br/brasil/certificados-de-vacinacao-do-brasil-sao-reconhecidos-por-portugal/" target="new_blank">Leia mais!</a>
+                </div>
+            </div>
+
+            <div class="destaque8">
+                <div class="botaoDestaque">
+                    <a href="https://g1.globo.com/bemestar/vacina/noticia/2021/09/17/vacinacao-contra-a-covid-mais-de-37percent-da-populacao-esta-totalmente-imunizada-66percent-tomaram-a-primeira-dose.ghtml" target="new_blank">Leia mais!</a>
+                </div>
+            </div>
+            
+            <div class="destaque9">
+                <div class="botaoDestaque">    
+                    <a href="https://coronavirus.rs.gov.br/estado-distribui-vacinas-para-iniciar-dose-de-reforco-de-idosos-em-lares"
+                        target="new_blank">Leia mais!</a>
+                    </div>
+            </div>
+        </div>
+    
     
 
-    
+        <h2 class="tituloContainer">Localizações dos postos de saúde!</h2>
+
+        <div class="containerMap">
+            <div class="postoMap">
+              
+                <img src="../../img/" alt="cartoon">
+              
+              
+              
+              
+                <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d58233.19067939973!2d-46.814406268442404!3d-24.186653917948863!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1susf%20itanhaem!5e0!3m2!1spt-BR!2sbr!4v1637291850520!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </main>
 
 
- 
+
+
+
+
 </body>
+
 </html>

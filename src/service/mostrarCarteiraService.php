@@ -9,10 +9,13 @@ if($_GET){
    
     $cdPosto = $_GET['cdPosto'];
     $id = $_GET['userId'];
+    
+    
+   $sql = 'SELECT c.*,  v.NMVACINA, v.FABRICANTE, v.TEXTVAC, p.NMPOSTO FROM tb_carteira c, tb_vacina v, tb_posto p WHERE v.CDVACINA = c.CDVACINA AND p.CDPOSTO = '.$cdPosto.' AND c.FK_PACIENTE = '.$id.'';
 
-    $sql = 'SELECT c.*,  v.NMVACINA, v.FABRICANTE, p.NMPOSTO FROM tb_carteira c, tb_vacina v, tb_posto p WHERE v.CDVACINA = c.CDVACINA AND p.CDPOSTO = '.$cdPosto.' AND c.FK_PACIENTE = '.$id.'';
-
+  
     $query = $con->query($sql);
+
 
     if($query->num_rows > 0){
 
@@ -22,13 +25,15 @@ if($_GET){
             $dados[] = $result;
         }    
 
-       echo json_encode($dados);
-
+        $queryResult['error'] = false;
+        $queryResult['data'] = $dados;
+        echo json_encode($queryResult);
         die;
     }
 
-
-    echo 'errrooou';
+    $queryResult['error'] = true;
+    $queryResult['message'] = 'Você não tem nenhuma vacina agendada!';
+    echo json_encode($queryResult);
 }
 
 ?>

@@ -19,6 +19,7 @@ if($_POST){
 	$dtnasc = $_POST['dtnasc'];
 	$posto = $_POST['posto'];
 	
+
 //	validação dos dados
 	if (isset($_POST['cdpaciente'])) {
 		$sql = 'UPDATE TB_PACIENTE SET email="'.$email.'",';
