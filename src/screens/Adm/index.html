@@ -12,8 +12,9 @@
     <script defer src="../../controllers/vaccineController.js"></script>
     <script defer src="../../controllers/validationVaccine.js"></script>
     <script defer src="../../controllers/updateVaccineController.js"></script>
+    <script defer src="../../controllers/cadastrarEstoque.js"></script>
 
-    <script>/*
+    <script>
   const user = sessionStorage.getItem('accessLevel');
 
     function adminUser() {
@@ -26,7 +27,7 @@
     function logout() {
         sessionStorage.clear();
         window.location.assign('../Home/');
-    }*/
+    }
 
    
     $(document).on("click", ".selection", function() {
@@ -52,7 +53,7 @@
 
 </head>
 
-<body onload="adminUser()">
+<body onload="adminUser()" id="body">
     <!--Menu do adm-->
     <header class="container">
         <img src="../../img/cardlab-logo-top.png" alt="logo">
@@ -115,26 +116,85 @@
                 <form action="" method="POST" onsubmit="Form.sendForm(event)">
 
                     <div class="itemCadastrarVacina">
-                        <label for="cdvacina">Codigo da vacina (2 digitos):</label>
-                        <input type="number" placeholder="Digite o codigo" id="idVaccine">
-
-
                         <label for="nmvacina">Nome da vacina:</label>
                         <input type="text" placeholder="digite o nome" id="nameVaccine">
-
 
                         <label for="fbvac">Fabricante:</label>
                         <input type="text" placeholder="Digite o fabricante" id="manufacturerVaccine">
 
+                        <label for="textvac">Descrição:</label>
+                        <input type="text" placeholder="Descrição da vacina" id="textVac">
+
+                        <label for="category">Categoria</label>
+                        <select name="category" id="category">
+                            <option value="Ao nascer">Ao nascer</option>
+                            <option value="2 meses">2 meses</option>
+                            <option value="3 meses">3 meses</option>
+                            <option value="4 meses">4 meses</option>
+                            <option value="5 meses">5 meses</option>
+                            <option value="6 meses">6 meses</option>
+                            <option value="9 meses">9 meses</option>
+                            <option value="12 meses">12 meses</option>
+                            <option value="15 meses">15 meses</option>
+                            <option value="4 anos">4 anos</option>
+                            <option value="Meninas de 9 a 14 anos">Meninas de 9 a 14 anos</option>
+                            <option value="Meninos de 11 a 14 anos">Meninos de 11 a 14 anos</option>
+                            <option value="10 a 19 anos">10 a 19 anos</option>
+                            <option value="20 a 59 anos">20 a 59 anos</option>
+                            <option value="Gestante">Gestante</option>
+                            <option value="60 anos e mais">60 anos e mais</option>
+                        </select>
+
                     </div>
-
-
-
                     <button class="btnCadastrar">Cadastrar</button>
-
                 </form>
             </div>
         </div>
+
+
+        <h3>Cadastrar nova vacina</h3>
+        <div class="containerCadastrarEstoque">
+            <div class="cadastrarEstoque">
+                <form action="" method="POST" onsubmit="Estoque.sendForm1(event)">
+
+                    <div class="itemCadastrarEstoque">
+                        <label for="dtFab">Data de fabricação:</label>
+                        <input type="date" placeholder="digite a data de fab." id="dtFab">
+
+
+                        <label for="dtVal">Data de validade:</label>
+                        <input type="date" placeholder="Digite a data de val." id="dtVal">
+
+                        <label for="lote">Lote:</label>
+                        <input type="text" placeholder="Digite o lote" id="lote">
+
+                        <label for="qntVac">Quantidade:</label>
+                        <input type="number" placeholder="Digite a quantidade de vac." id="qntVac">
+
+                        <label for="posto">Selecione o posto:</label>
+                        <select name="posto" id="posto">
+                            <option value="01">USF LOTY</option>
+                            <option value="02">USF SAVOY</option>
+                            <option value="03">USF GUAPIRANGA</option>
+                            <option value="04">USF CENTRO</option>
+                            <option value="05">USF GRANDESP</option>
+                            <option value="06">USF SUARAO</option>
+                            <option value="07">USF OASIS</option>
+                            <option value="08">USF BELAS ARTES</option>
+                            <option value="09">USF GAIVOTA</option>
+                        </select>
+                        
+                        <select id="vaccine">
+
+                        </select>
+
+                        <button>Enviar dados ao Estoque</button>
+
+                        </div>
+                        </form>
+                    </div>
+
+
         <h3>Editar vacina</h3>
 
         <div class="containerEditarVacina">
@@ -142,11 +202,9 @@
                 <form id="newVaccine">
                      <select name="cdvacina" id="cdvacina"></select>
                      <select name="cdposto" id="cdposto"></select>
+                     <button id="searchStock">Pesquisar</button>
                 </form>
-
-
             </div>
-
         </div>
     </main>
 

@@ -4,11 +4,23 @@ header("Acess-Control-Allow-Origin: *");
 include('../database/conn.php');
 
 if($_POST){
-    $idVaccine = $_POST['idVaccine'];
     $nameVaccine = $_POST['nameVaccine'];
     $manufacturerVaccine = $_POST['manufacturerVaccine'];
+    $textVac = $_POST['textVac'];
+    $category = $_POST['category'];
     
-    $insertTbVaccine = 'INSERT INTO tb_vacina VALUES  ('.$idVaccine.',"'.$nameVaccine.'","'.$manufacturerVaccine.'")';
+    $verifyExists = 'SELECT * FROM tb_vacina WHERE NMVACINA = "'.$nameVaccine.'"';
+    $verifyRes = $con->query($verifyExists);
+
+    if($verifyRes->num_rows > 0) {
+        $dados['message'] = 'A vacina '.$nameVaccine.', já esta cadastrada no sistema!';
+        $dados['error'] = true;
+        echo json_encode($dados);
+        die;
+    }
+
+
+    $insertTbVaccine = 'INSERT INTO tb_vacina VALUES  (null,"'.$nameVaccine.'","'.$manufacturerVaccine.'","'.$textVac.'","'.$category.'")';
     
 
 

@@ -1,38 +1,32 @@
 const Form = {
-    idVaccine: document.getElementById('idVaccine'),
     nameVaccine: document.getElementById('nameVaccine'),
     manufacturerVaccine: document.getElementById('manufacturerVaccine'),
+    textVac: document.getElementById('textVac'),
+    category: document.getElementById('category'),
     
 // pegando valores
     getValues(){
         
         return {
-            idVaccine: this.idVaccine.value,
             nameVaccine: this.nameVaccine.value,
             manufacturerVaccine: this.manufacturerVaccine.value,
+            textVac: this.textVac.value,
+            category: this.category.value,
         }     
     },
 
     ValidationData(){
-        let {idVaccine, manufacturerVaccine, nameVaccine} = this.getValues();
+        let {manufacturerVaccine, nameVaccine, textVac, category} = this.getValues();
         
 
-        idVaccine = idVaccine.trim();
         nameVaccine = nameVaccine.trim().toUpperCase();
 
-        /*if(idVaccine.length !== 2){
-            throw new Error('Codigo da vacina são apenas 2 digitos');
-        }
-
-        if(idMedicine.length !== 3){
-            throw new Error('Máximo de 3 digitos')
-        }*/
 
         return{
-            idVaccine,
             nameVaccine,
             manufacturerVaccine,
-           
+            textVac,
+            category,
         }
     },
 
@@ -40,11 +34,11 @@ const Form = {
         e.preventDefault();
 
         try {
-            const {idVaccine, manufacturerVaccine, nameVaccine} = this.ValidationData();
+            const {manufacturerVaccine, nameVaccine, textVac, category} = this.ValidationData();
 
             $.ajax({
                 url: '../../service/vaccineService.php',
-                data: {idVaccine, manufacturerVaccine, nameVaccine},
+                data: {manufacturerVaccine, nameVaccine, textVac, category},
                 type: 'POST',
                 success: function(response){
                    

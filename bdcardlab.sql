@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Dec 02, 2021 at 12:35 AM
+-- Generation Time: Dec 04, 2021 at 02:39 AM
 -- Server version: 5.5.20
 -- PHP Version: 5.3.9
 
@@ -27,7 +27,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE IF NOT EXISTS `estoque_vac` (
-  `CDMEDICAMENTO` int(3) unsigned zerofill NOT NULL,
+  `CDMEDICAMENTO` int(3) unsigned zerofill NOT NULL AUTO_INCREMENT,
   `DTFAB` date NOT NULL,
   `DTVAL` date NOT NULL,
   `LOTE` varchar(55) NOT NULL,
@@ -37,14 +37,16 @@ CREATE TABLE IF NOT EXISTS `estoque_vac` (
   PRIMARY KEY (`CDMEDICAMENTO`),
   KEY `CDVACINA` (`CDVACINA`),
   KEY `CDPOSTO` (`CDPOSTO`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=25 ;
 
 --
 -- Dumping data for table `estoque_vac`
 --
 
 INSERT INTO `estoque_vac` (`CDMEDICAMENTO`, `DTFAB`, `DTVAL`, `LOTE`, `QNTVAC`, `CDPOSTO`, `CDVACINA`) VALUES
-(001, '2021-01-21', '2021-12-30', '12345', 500, 02, 01);
+(022, '2021-12-04', '2021-12-11', '21', 12, 01, 01),
+(023, '2021-12-04', '2021-12-11', '21', 12, 01, 02),
+(024, '2021-12-04', '2021-12-18', '22', 12, 01, 01);
 
 -- --------------------------------------------------------
 
@@ -251,13 +253,13 @@ INSERT INTO `tb_posto` (`CDPOSTO`, `NMPOSTO`, `TELEFONE1`, `TELEFONE2`, `ENDEREC
 --
 
 CREATE TABLE IF NOT EXISTS `tb_vacina` (
-  `CDVACINA` int(2) unsigned zerofill NOT NULL,
+  `CDVACINA` int(2) unsigned zerofill NOT NULL AUTO_INCREMENT,
   `NMVACINA` varchar(120) NOT NULL,
   `FABRICANTE` varchar(120) NOT NULL,
   `TEXTVAC` varchar(200) DEFAULT NULL,
   `CATEGVAC` varchar(200) DEFAULT NULL,
   PRIMARY KEY (`CDVACINA`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
 
 --
 -- Dumping data for table `tb_vacina`
@@ -269,7 +271,8 @@ INSERT INTO `tb_vacina` (`CDVACINA`, `NMVACINA`, `FABRICANTE`, `TEXTVAC`, `CATEG
 (03, 'PFIZER', 'PFIZER/BIONTECH', NULL, NULL),
 (04, 'JANSSEN', 'JANSSEN-CILAG', NULL, NULL),
 (05, 'SPUTNIK', 'GAMALEYA', NULL, NULL),
-(06, 'COVAXIN', 'BHARAT BIOTECH', NULL, NULL);
+(06, 'COVAXIN', 'BHARAT BIOTECH', NULL, NULL),
+(07, 'TESTE', 'etec', 'testando vac', 'Ao nascer');
 
 --
 -- Constraints for dumped tables
