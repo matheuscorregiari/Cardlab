@@ -36,9 +36,9 @@ do {
                     $retorno .= '<input type="date" id="updateStockDataVal" value="'.$posto->DTVAL.'" />';
                     $retorno .= '<input type="text" id="updateStockLote" value="'.$posto->LOTE.'" />';
                     $retorno .= '<input type="number" id="updateStockQuantVacina" value="'.$posto->QNTVAC.'" />';
-                    $retorno .='<button id="btnEdit" onclick="sendForm(e)">Atualizar</button>';      
+                    $retorno .='<button id="btnEdit" onclick="Stock.updateStock(event)">Atualizar</button>';      
                     $retorno .='<button id="voltar">Voltar</button>';      
-                    $retorno .= '<button id="deletar">Deletar</button>';
+                    $retorno .= '<button id="deletar" onclick="Stock.deleteStock(event)">Deletar</button>';
                 }
 
                 echo $retorno;
@@ -86,3 +86,7 @@ if($_POST['idDelete']) {
         die;
     }
 }
+
+
+
+

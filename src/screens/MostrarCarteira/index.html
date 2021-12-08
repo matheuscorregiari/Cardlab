@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="../estilo/main.css">
     <link rel="stylesheet" href="../estilo/mainResponsive.css">
     <script defer src="../../controllers/setup.js"></script>
-    <script defer src="../../controllers/mostrarCarteiraController.js"></script> 
+    <script defer src="../../controller/User.js"></script> 
 
     <script>
         const user = sessionStorage.getItem('accessLevel');
@@ -29,7 +29,7 @@
     </script>
 </head>
 
-<body onload="userSignIn()">
+<body onload="userSignIn(); User.showWallet()">
 
     <!--Menu lateral-->
     <div class="sidebar" id="mySidebar">

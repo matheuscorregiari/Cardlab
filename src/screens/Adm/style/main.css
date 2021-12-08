@@ -111,9 +111,12 @@ h3{
     align-items: center;
     flex-direction: column;
     width: 90%;
-    height: 400px;
-    border: 3px solid black;
+    min-height: 400px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border: 2px solid black;
     border-radius: 10px;    
+    
 }
 
 .validarPaciente .buscarPaciente{
@@ -150,21 +153,33 @@ h3{
 }
 
 .validarPaciente .tabela{
-    border: 1px solid black;
+    border: 2px solid black;
     margin-top: 10px;
     padding: 20px;
     margin-left: 50px;
     margin-right: 20px;
     margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+    
 }
+
+
 
 .tabela th ,td{
     min-width: 150px;
     flex-wrap: wrap;
+    border: 1px solid black;
+    
+    
 }
 
 .tabela td{
      text-align: center;
+     cursor: pointer;
+     padding: 3px;
 }
 
 .validarPaciente .btnValidar{
@@ -182,6 +197,13 @@ h3{
     background-color: rgb(43, 134, 43);
     color: white;
     border: 2px solid black;
+}
+
+.active{
+    text-transform: uppercase;
+    font-weight: 600;
+    color: darkblue;
+    background-color: aliceblue;
 }
 
 
@@ -249,6 +271,47 @@ h3{
    
 }
 
+/*      Cadastrar Estoque  */
+
+.containerCadastrarEstoque{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    
+}
+
+.containerCadastrarEstoque .cadastrarEstoque{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(200, 255, 252);
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    min-height: 400px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border: 3px solid black;
+    border: 2px solid rgb(0,0 ,0 , 0.4);
+    border-radius: 10px;
+}
+
+.cadastrarEstoque .itemCadastrarEstoque{
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    justify-content: space-between;
+    font-size: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.itemCadastrarEstoque label{
+    margin-top: 20px;
+}
+
+
 
 
         /* Editar vacina */
@@ -259,6 +322,7 @@ h3{
     justify-content: center;
     margin-top: 20px;
     flex-wrap: wrap;
+    
 }
 
 
@@ -283,6 +347,7 @@ h3{
 #newVaccine select, button, input{
     justify-content: center;
 }
+ss
 
 
 

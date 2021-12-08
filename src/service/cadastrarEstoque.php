@@ -13,11 +13,12 @@ if($_POST){
     $vaccine = $_POST['vaccine'];
 
 
-    $verifyExists = 'SELECT * FROM estoque_vac WHERE LOTE = "'.$lote.'"';
+    $verifyExists = 'SELECT e.* FROM estoque_vac e WHERE e.LOTE='.$lote.' AND e.CDVACINA='.$vaccine.'';
+    
     $verifyRes = $con->query($verifyExists);
 
     if($verifyRes->num_rows > 0) {
-        $dados['message'] = 'Estoque do lote: '.$lote.', já foi realizado!';
+        $dados['message'] = 'Já cadastrado o lote: '.$lote.' da vacina: '.$vaccine.'';
         $dados['error'] = true;
         echo json_encode($dados);
         die;

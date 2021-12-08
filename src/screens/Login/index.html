@@ -8,7 +8,7 @@
 	
 	<link rel="stylesheet" href="./main.css">
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-	<script defer src="../../controllers/login.js"></script>
+	<script defer src="../../controller/User.js"></script>
 </head>
 <body>
 
@@ -32,7 +32,7 @@
 
 	<main>
 		<div class="containerLogin">
-			<form onsubmit="Form.autlogin(event)" method="post">
+			<form onsubmit="User.login(event)" method="post">
 				<h2 class="titleLogin">Login</h2>
 
 				<div class="loginInput">
