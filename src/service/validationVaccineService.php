@@ -65,7 +65,7 @@ if(isset($_POST['idForValidation'])){
 
             }else {
                 $response['errorStock'] = true;
-                $response['messageStock'] = 'Falha ao buscar o código da vácina para tualização do estoque!';
+                $response['messageStock'] = 'Falha ao buscar o código da vácina para atualização do estoque!';
                 echo json_encode($response);
                 die;
             }

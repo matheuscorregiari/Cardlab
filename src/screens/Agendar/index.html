@@ -10,7 +10,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <title>Agendamento</title>
     <script defer src="../../controllers/setup.js"></script>
-    <script defer src="../../controllers//agendarController.js"></script>
+    <script defer src="../../controller/User.js"></script>
 
     <script>
         const user = sessionStorage.getItem('accessLevel');
@@ -72,7 +72,7 @@
         <h2>Agendamento da sua vacina</h2>
          <div class="containerAgendamento2">       
             <div class="containerAgendamento">
-                <form class="agenda" method="POST" onsubmit="FORM.sendingForm(event)">
+                <form class="agenda" method="POST" onsubmit="User.scheduleVaccine(event)">
                 
 
                 <!--   <label for="posto">Selecione o posto:</label>

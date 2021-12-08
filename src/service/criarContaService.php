@@ -43,7 +43,7 @@ if($_POST){
 		$verifyUserExist = $con->query($verifySql);
 
 		if($verifyUserExist->num_rows>0){
-			$dados['message'] = "CPF já cadastrado no sistema :/";
+			$dados['message'] = "CPF já cadastrado no sistema!";
 			$dados['success'] =  false;
 			echo json_encode($dados);
 			die;

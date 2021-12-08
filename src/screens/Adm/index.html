@@ -8,48 +8,45 @@
     <link rel="stylesheet" href="./style/main.css">
     <link rel="stylesheet" href="./style/responsive.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <script defer src="../../controllers/vaccineController.js"></script>
-    <script defer src="../../controllers/validationVaccine.js"></script>
-    <script defer src="../../controllers/updateVaccineController.js"></script>
-    <script defer src="../../controllers/cadastrarEstoque.js"></script>
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous">
+    </script>
+    <script defer src="../../controller/Vaccine.js"></script>
+    <script defer src="../../controller/Stock.js"></script>
+    <script defer src="../../controller/User.js"></script>
+    <script defer src="../../util/jqueryUtilities.js" ></script>
 
     <script>
-  const user = sessionStorage.getItem('accessLevel');
+        const user = sessionStorage.getItem('accessLevel');
 
-    function adminUser() {
+        function adminUser() {
 
-        if(user === 'false' || user === null){
+            if (user === 'false' || user === null) {
+                window.location.assign('../Home/');
+            }
+        }
+
+        function logout() {
+            sessionStorage.clear();
             window.location.assign('../Home/');
         }
-    }
 
-    function logout() {
-        sessionStorage.clear();
-        window.location.assign('../Home/');
-    }
 
-   
-    $(document).on("click", ".selection", function() {
-        let value = $(this);
+        $(document).on("click", ".selection", function () {
+            let value = $(this);
 
-        if($(this).hasClass('active')){
-            value.removeClass('active');
-        } else {
-            value.addClass('active');
-        }
-    })
+            if ($(this).hasClass('active')) {
+                value.removeClass('active');
+            } else {
+                value.addClass('active');
+            }
+        })
+
 
     </script>
 
     <title>Bem vindo adm</title>
 
-    <style>
-        .active {
-            color: red;
-            cursor: pointer;
-        }
-    </style>
+
 
 </head>
 
@@ -82,7 +79,7 @@
         <h3>Validar na carteira de vacina do paciente</h3>
         <div class="containerValidation">
             <div class="validarPaciente">
-                <form action="" method="POST" onsubmit="ValidationVaccine.sendData(event)">
+                <form action="" method="POST" onsubmit="User.searchUserToAuthenticate(event)">
                     <div class="buscarPaciente">
                         <label for="cpf">Digite o CPF:</label>
                         <input type="text" placeholder="buscar pelo cpf" id="searchCpf">
@@ -104,7 +101,7 @@
                     </thead>
                 </table>
                 <div class="itemBtnValidar">
-                    <button class="btnValidar" id="btnVallidation">Validar</button>
+                    <button class="btnValidar" id="btnVallidation" onclick="Vaccine.cancelVaccine()">Validar</button>
                 </div>
             </div>
         </div>
@@ -113,7 +110,7 @@
         <h3>Cadastrar nova vacina</h3>
         <div class="containerCadastrarVacina">
             <div class="cadastrarVacina">
-                <form action="" method="POST" onsubmit="Form.sendForm(event)">
+                <form method="POST" onsubmit="Vaccine.createVaccine(event)">
 
                     <div class="itemCadastrarVacina">
                         <label for="nmvacina">Nome da vacina:</label>
@@ -152,10 +149,10 @@
         </div>
 
 
-        <h3>Cadastrar nova vacina</h3>
+        <h3>Cadastrar novo estoque</h3>
         <div class="containerCadastrarEstoque">
             <div class="cadastrarEstoque">
-                <form action="" method="POST" onsubmit="Estoque.sendForm1(event)">
+                <form action="" method="POST" onsubmit="Stock.createStock(event)">
 
                     <div class="itemCadastrarEstoque">
                         <label for="dtFab">Data de fabricação:</label>
@@ -183,26 +180,26 @@
                             <option value="08">USF BELAS ARTES</option>
                             <option value="09">USF GAIVOTA</option>
                         </select>
-                        
+                        <label for="vaccine">Selecione a vacina:</label>
                         <select id="vaccine">
 
                         </select>
 
                         <button>Enviar dados ao Estoque</button>
 
-                        </div>
-                        </form>
                     </div>
-
+                </form>
+            </div>
+        </div>
 
         <h3>Editar vacina</h3>
 
         <div class="containerEditarVacina">
             <div class="editarVacina">
                 <form id="newVaccine">
-                     <select name="cdvacina" id="cdvacina"></select>
-                     <select name="cdposto" id="cdposto"></select>
-                     <button id="searchStock">Pesquisar</button>
+                    <select name="cdvacina" id="cdvacina"></select>
+                    <select name="cdposto" id="cdposto"></select>
+                    <button id="searchStock">Pesquisar</button>
                 </form>
             </div>
         </div>
@@ -210,10 +207,6 @@
 
 
 
-    </form>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <script src="../../controllers/vacina.js"></script>
 
 </body>
 
